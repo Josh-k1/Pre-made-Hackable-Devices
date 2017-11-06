@@ -1,0 +1,26 @@
+{
+    "name": "Pre-made Hackable Devices",
+    "sceneName": "Pre-made Hackable Devices",
+    "description": "",
+    "district": "Harbour",
+    "location": "",
+    "imagePath": "",
+    "assetBundles": [
+        "pre-made hackable devices"
+    ],
+    "missionScripts": [
+        "Pre-made Hackable Devices_mission.lua"
+    ],
+    "preconditions": {
+        "keyArray": [],
+        "valueArray": []
+    },
+    "effects": {
+        "keyArray": [],
+        "valueArray": []
+    },
+    "rules": {
+        "keyArray": [],
+        "valueArray": []
+    }
+}
