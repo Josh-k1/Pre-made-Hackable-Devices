@@ -247,3 +247,11 @@ MissionObjects["IDcard_01"].OnStartInteracting = function (name)
 
 	end
 end
+
+
+MissionObjects["Gen_electricBox"].OnStartInteracting = function (name)
+	if name == Player.GetName()then
+		print("activated")
+		Animator.SetBool("Gen_electricBox","activated", true)
+	end
+end

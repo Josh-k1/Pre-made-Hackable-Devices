@@ -1,8 +1,5 @@
 device = {
 	-- Stock --
-	canAccess = function()
-	 return true
-	end,
 	gui = {
 		type = "ncurses",
 		header = [[~ Wireless Printer v2.1 ~ ]],

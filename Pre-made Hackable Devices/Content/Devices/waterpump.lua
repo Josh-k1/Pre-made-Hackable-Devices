@@ -14,45 +14,49 @@ device = {
 			Diagnostics ={
 				name = "Water Pump Diagnostics",
 				subButtons = {
-					{
+					pressure = {
 						name = "Pressure level:" .. pressure,
 					},
+					Temperature =
 					{
 						name = "Water Temperature:",
 					},
-        },
-      },
+				},
+			},
+
+
 
       Settings ={
 				name = "Modify Settings",
         onClick = function ()
-          pressure = pressure +1
-          print(pressure)
+
         end,
 				subButtons = {
-					{
-						increase = {
+
+					increase = {
+
 						name = "Increase pressure",
 						onClick = function ()
+							pressure = pressure +1
 							CheckUpdates()
 					end,
 					},
 
-					},
-					{
+					Decrease ={
 						name = "Decrease pressure",
             onClick = function ()
             pressure = pressure -1
+							CheckUpdates()
               print(pressure)
           end,
 
-					},
-        },
-      },
-    },
-  },
-}
+						},
+        	},
+      	},
+    	},
+  	},
+	}
 
 function CheckUpdates()
-device.gui.buttons.system.subButtons.increase.name = "No new updates."
+device.gui.buttons.Diagnostics.subButtons.pressure.name = "Pressure level:" .. pressure
 end
