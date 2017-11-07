@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.113233805, g: 0.14388745, b: 0.18898909, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -191,7 +191,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4258097929584442, guid: b5a876b1af3e84a47bca3c18c0d8361e, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4258097929584442, guid: b5a876b1af3e84a47bca3c18c0d8361e, type: 2}
       propertyPath: m_LocalRotation.z
@@ -199,7 +199,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4258097929584442, guid: b5a876b1af3e84a47bca3c18c0d8361e, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4258097929584442, guid: b5a876b1af3e84a47bca3c18c0d8361e, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -207,7 +207,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4258097929584442, guid: b5a876b1af3e84a47bca3c18c0d8361e, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936440254426610, guid: b5a876b1af3e84a47bca3c18c0d8361e, type: 2}
+      propertyPath: m_TagString
+      value: Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936440254426610, guid: b5a876b1af3e84a47bca3c18c0d8361e, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5a876b1af3e84a47bca3c18c0d8361e, type: 2}
@@ -702,6 +710,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 53616120}
   m_Mesh: {fileID: 4300000, guid: 73d414fb3de2f4541be95fd8abc4f389, type: 3}
+--- !u!1 &56283194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 56283195}
+  m_Layer: 13
+  m_Name: grabme
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &56283195
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 56283194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.308, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 10895125}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &58926871
 GameObject:
   m_ObjectHideFlags: 0
@@ -9537,72 +9573,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9fc72e33ac7ba4e1d982ac3519f6fc66, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &864955358 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1566069520960620, guid: b5a876b1af3e84a47bca3c18c0d8361e,
-    type: 2}
-  m_PrefabInternal: {fileID: 10895124}
---- !u!95 &864955359
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 864955358}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3488f835a17e84456be4454c6e84706c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &864955360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 864955358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bb88ceda3a1e474eadf845436a92286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  triggerOnce: 1
-  interactionType: 0
-  HandMarker: {fileID: 0}
-  ShouldPreInteract: 0
-  interactOnce: 0
-  OnInteractionCheck:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: InteractionEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnInteractionStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9100000, guid: 3488f835a17e84456be4454c6e84706c, type: 2}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: InteractionEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnInteractionStop:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: InteractionEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  DisplayUnityEvents: 0
 --- !u!1 &886114868
 GameObject:
   m_ObjectHideFlags: 0
@@ -19981,6 +19951,61 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400006, guid: 4a65512520db1f14c85f787db32ef2fc, type: 2}
   m_PrefabInternal: {fileID: 1149385970}
+--- !u!1 &1156591157 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1936440254426610, guid: b5a876b1af3e84a47bca3c18c0d8361e,
+    type: 2}
+  m_PrefabInternal: {fileID: 10895124}
+--- !u!95 &1156591162
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1156591157}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3488f835a17e84456be4454c6e84706c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1156591163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1156591157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb88ceda3a1e474eadf845436a92286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  triggerOnce: 1
+  interactionType: 0
+  HandMarker: {fileID: 0}
+  ShouldPreInteract: 0
+  interactOnce: 0
+  OnInteractionCheck:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: InteractionEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: InteractionEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnInteractionStop:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: InteractionEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  DisplayUnityEvents: 0
 --- !u!1 &1157830228
 GameObject:
   m_ObjectHideFlags: 0

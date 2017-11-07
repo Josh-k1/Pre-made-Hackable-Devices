@@ -248,10 +248,15 @@ MissionObjects["IDcard_01"].OnStartInteracting = function (name)
 	end
 end
 
+on = false
+MissionObjects["Gen_electricBox_throw"].OnStartInteracting = function (name)
 
-MissionObjects["Gen_electricBox"].OnStartInteracting = function (name)
-	if name == Player.GetName()then
-		print("activated")
-		Animator.SetBool("Gen_electricBox","activated", true)
-	end
+	if name == Player.GetName()and on == false then
+		Animator.SetBool("Gen_electricBox_throw","activate", true)
+on = true
+	else
+	Animator.SetBool("Gen_electricBox_throw","activate", false)
+	on = false
+--end
 end
+end 
