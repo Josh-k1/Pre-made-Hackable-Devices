@@ -106,6 +106,10 @@ Table key is used as the internalName value on Unity side.
 			internalName = "CCTVDome",
 			script="CCTVDome.lua"
 		},
+		cctvcam ={
+			internalName = "CCTV-Head_01",
+			script="CCTVDome.lua"
+		},
 		desklamp ={
 			internalName= "iDeskLamp",
 			script="iDeskLamp.lua",
@@ -175,6 +179,7 @@ function SetupMission()
 	Mission.AddHackableDevice(mission.devices.sodamachine)
 	Mission.AddHackableDevice(mission.devices.desklamp)
 	Mission.AddHackableDevice(mission.devices.cctvdome)
+	Mission.AddHackableDevice(mission.devices.cctvcam)
 	Mission.AddHackableDevice(mission.devices.smartfridge)
 	Mission.AddHackableDevice(mission.devices.printer)
 	Mission.AddHackableDevice(mission.devices.computer)
@@ -220,6 +225,7 @@ Player.AddDataFile(mission.data.PlayerPGPKey)
 	Mission.ConnectToNetwork(mission.devices.cashregister, mission.networks.Semaeopus4G.name, mission.networks.Semaeopus4G.userAccessKey)
 	Mission.ConnectToNetwork(mission.devices.serverfull, mission.networks.Semaeopus4G.name, mission.networks.Semaeopus4G.userAccessKey)
 	Mission.ConnectToNetwork(mission.devices.waterpump, mission.networks.Semaeopus4G.name, mission.networks.Semaeopus4G.userAccessKey)
+	Mission.ConnectToNetwork(mission.devices.cctvcam, mission.networks.Semaeopus4G.name, mission.networks.Semaeopus4G.userAccessKey)
 Doors.SetKeyOnDevice("Maintenance", mission.devices.idcard_01)
 end
 
@@ -259,4 +265,4 @@ on = true
 	on = false
 --end
 end
-end 
+end
