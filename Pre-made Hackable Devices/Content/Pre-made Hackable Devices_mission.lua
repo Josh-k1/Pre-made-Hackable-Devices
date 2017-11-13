@@ -12,6 +12,12 @@ mission = {
 			prefab = "player",
 			spawnpoint = "PlayerSpawn",
 		},
+
+		smedley = {
+			displayName = "Smedley Butler",
+			internalName = "Smedley",
+			characterType = "virtual",
+		},
 	},
 
 -- Inventory items:
@@ -48,6 +54,25 @@ Table key is used as the internalName value on Unity side.
 			dataString ="Bob",
 			description = "text/plain,10kb",
 			dataColor = {0.0,0.6,1.0,0.3},
+		},
+		ServerSignSMS01 = {
+			internalName = "ServerSignSMS",
+			name = "SMS",
+			dataType = 2,
+			creatorName = "HackerHQ",
+			dataString = "DeviceMuseum_data_SeverSignSMS_dataString01",
+			description = "text/SMS",
+			dataColor = {0.0, 1.0, 1.0, 1.0},
+		},
+
+		PrinterSignSMS01 = {
+			internalName = "PrinterSignSMS",
+			name = "SMS",
+			dataType = 2,
+			creatorName = "HackerHQ",
+			dataString = "DeviceMuseum_data_PrinterSignSMS_dataString01",
+			description = "text/SMS",
+			dataColor = {0.0, 1.0, 1.0, 1.0},
 		},
 
 	},
@@ -149,6 +174,15 @@ Table key is used as the internalName value on Unity side.
 			internalName="Mod_WaterPumpDevice_01",
 			script="Content/Devices/waterpump.lua"
 		},
+		--Signs
+		ServerSign ={
+			internalName="Server_sign",
+			dataColor = {1.0, 0.5, 0.0, 1.0 },
+		},
+		PrinterSign ={
+			internalName="Printer_Sign",
+			dataColor = {1.0, 0.5, 0.0, 1.0 },
+		}
 	},
 }
 
@@ -171,10 +205,11 @@ function SetupMission()
 	Mission.AddNetwork(network)
 	end
 
+ --Add Signposts
+ Mission.AddNetDevice(mission.devices.ServerSign)
+ Mission.AddNetDevice(mission.devices.PrinterSign)
 
-
-
-
+-- Add devices
 	Mission.AddHackableDevice(mission.devices.laptop)
 	Mission.AddHackableDevice(mission.devices.sodamachine)
 	Mission.AddHackableDevice(mission.devices.desklamp)
@@ -213,6 +248,9 @@ Player.ClearDataFiles()
 Player.AddDataFile(mission.data.PlayerPGPKey)
 	-- Set up player's network connections:
 	Mission.ConnectToNetwork(mission.characters.joe, mission.networks.Semaeopus4G.name, mission.networks.Semaeopus4G.userAccessKey )
+	-- NPC
+	Mission.ConnectToNetwork(mission.characters.smedley, mission.networks.Semaeopus4G.name, mission.networks.Semaeopus4G.userAccessKey)
+	-- Connect Devices
 	Mission.ConnectToNetwork(mission.devices.laptop, mission.networks.Semaeopus4G.name, mission.networks.Semaeopus4G.userAccessKey )
 	Mission.ConnectToNetwork(mission.devices.sodamachine, mission.networks.Semaeopus4G.name, mission.networks.Semaeopus4G.userAccessKey )
 	Mission.ConnectToNetwork(mission.devices.desklamp, mission.networks.Semaeopus4G.name, mission.networks.Semaeopus4G.userAccessKey )
@@ -226,7 +264,15 @@ Player.AddDataFile(mission.data.PlayerPGPKey)
 	Mission.ConnectToNetwork(mission.devices.serverfull, mission.networks.Semaeopus4G.name, mission.networks.Semaeopus4G.userAccessKey)
 	Mission.ConnectToNetwork(mission.devices.waterpump, mission.networks.Semaeopus4G.name, mission.networks.Semaeopus4G.userAccessKey)
 	Mission.ConnectToNetwork(mission.devices.cctvcam, mission.networks.Semaeopus4G.name, mission.networks.Semaeopus4G.userAccessKey)
-Doors.SetKeyOnDevice("Maintenance", mission.devices.idcard_01)
+--Connect Signposts
+Mission.ConnectToNetwork(mission.devices.ServerSign, mission.networks.Semaeopus4G.name, mission.networks.Semaeopus4G.userAccessKey)
+Mission.ConnectToNetwork(mission.devices.PrinterSign, mission.networks.Semaeopus4G.name, mission.networks.Semaeopus4G.userAccessKey)
+
+
+--Send Data
+	Mission.SendData(mission.characters.smedley, mission.devices.ServerSign, mission.data.ServerSignSMS01)
+	Mission.SendData(mission.characters.smedley, mission.devices.PrinterSign, mission.data.PrinterSignSMS01)
+	Doors.SetKeyOnDevice("Maintenance", mission.devices.idcard_01)
 end
 
 
@@ -265,4 +311,9 @@ on = true
 	on = false
 --end
 end
+end
+
+MissionObjects["Introduction_chat"].OnTriggerEnter = function (name)
+Conversation.StartScript("Content/Conversations/Introduction_chat.lua")
+
 end
