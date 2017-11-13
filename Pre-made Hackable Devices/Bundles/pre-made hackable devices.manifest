@@ -1,17 +1,17 @@
 ManifestFileVersion: 0
-CRC: 1903437594
+CRC: 608555313
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e9337f2147888834c56c5d4bf37687db
+    Hash: 53134c152b531a8a0ee0cb5ae8a2dad8
   TypeTreeHash:
     serializedVersion: 2
     Hash: 31d6cfe0d16ae931b73c59d7e0c089c0
 HashAppended: 0
 ClassTypes: []
 Assets:
-- Assets/Levels/Pre-made-Hackable-Devices/Pre-made Hackable Devices/Scene/Pre-made
+- Assets/Levels/Pre-made Hackable Devices/Pre-made Hackable Devices/Scene/Pre-made
   Hackable Devices.unity
 Dependencies:
 - /Users/joshuawalton/Library/Application Support/Steam/steamapps/common/Off Grid
-  - LevelKit/Assets/Levels/Pre-made-Hackable-Devices/Pre-made Hackable Devices/Bundles/offgrid_shaders
+  - LevelKit/Assets/Levels/Pre-made Hackable Devices/Pre-made Hackable Devices/Bundles/offgrid_shaders
